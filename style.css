@@ -1,0 +1,50 @@
+* {
+	position: relative;
+}
+
+html,
+body{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	font-size: 0;
+	/* background: rgb(255, 234, 249); */
+	background: rgb(255, 255, 255);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+	height: 100%;
+}
+
+canvas {
+	object-fit: contain;
+	width: 100% !important;
+	height: 100% !important;
+	image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.dg.ac {
+	z-index: 1000;
+}
+
+.dg.a {
+	margin-right: 0;
+}
+
+.dg.ac .cr.boolean .property-name {
+	width: 80%;
+}
+
+.dg.ac .cr.boolean .c {
+	width: 20%;
+}
