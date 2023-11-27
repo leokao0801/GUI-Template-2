@@ -2,10 +2,9 @@ const PIXEL_DENSITY = 2;
 let theShader;
 let canvas;
 
-let textureBase;
-
 // Part 2 - Step 2.1
 // from here
+let textureBase;
 let control = {
 	xBrickAmount: 50.0,
 	yBrickAmount: 50.0,
