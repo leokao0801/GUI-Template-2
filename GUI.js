@@ -44,10 +44,10 @@ function setup() {
 }
 
 function draw() {
-	// var y = (mouseY-500) / min(1, windowWidth / windowHeight) + 500;
+	var y = (mouseY-500) / min(1, windowWidth / windowHeight) + 500;
 	
 	theShader.setUniform("u_resolution", [width * PIXEL_DENSITY, height * PIXEL_DENSITY]);
-	// theShader.setUniform("u_mouse", [mouseX * PIXEL_DENSITY, (height-y) * PIXEL_DENSITY]);
+	theShader.setUniform("u_mouse", [mouseX * PIXEL_DENSITY, (height-y) * PIXEL_DENSITY]);
   	theShader.setUniform("u_time", millis() / 1000.0);
 
 	// Part 2 - Step 2.3
