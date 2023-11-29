@@ -10,9 +10,9 @@ uniform vec2 u_mouse;
 // from here
 uniform float u_xBrickAmount;
 uniform float u_yBrickAmount;
-// to here
 
 uniform sampler2D u_texBase;
+// to here
 
 void main() {
     vec2 st = gl_FragCoord.xy / u_resolution.xy;
