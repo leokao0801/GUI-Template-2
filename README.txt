@@ -32,8 +32,8 @@ Step 2: index.html <head>
 
             !MODIFY!
 
-            <script src="/fileLocation/fileName.js"></script>
-	    <link rel="stylesheet" type="text/css" href="/fileLocation/fileName.css">
+            <script src="fileLocation/fileName.js"></script>
+	    <link rel="stylesheet" type="text/css" href="fileLocation/fileName.css">
         
         index.html <body>
         2.3 Remove Code Below
@@ -49,7 +49,7 @@ Step 4: Load vert.glsl and .frag in the Canvas Created in .js to Create Shader
         (There is a lot of steps needed to make this happen, but the code you only have to care and modify is below.)
 
         function preload(){
-	        theShader = loadShader('/fileLocation/vert.glsl', '/fileLocation/fileName.frag');
+	        theShader = loadShader('fileLocation/vert.glsl', 'fileLocation/fileName.frag');
         }
 
 // -------------------------------------------------- //
