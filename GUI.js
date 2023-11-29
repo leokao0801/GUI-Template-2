@@ -2,9 +2,10 @@ const PIXEL_DENSITY = 2;
 let theShader;
 let canvas;
 
+let textureBase;
+
 // Part 2 - Step 2.1
 // from here
-let textureBase;
 let control = {
 	xBrickAmount: 50.0,
 	yBrickAmount: 50.0,
@@ -33,10 +34,41 @@ function windowResized() {
 	resizeCanvas(windowWidth, windowHeight);
 }
 
+function flipImage(img) {
+	img.loadPixels();
+	
+	// Get the width and height of the image
+	let w = img.width;
+	let h = img.height;
+  
+	// Create a new array to store the flipped pixels
+	let flippedPixels = new Uint8Array(4 * w * h);
+  
+	// Loop through the original pixels and copy them to the flippedPixels array
+	for (let y = 0; y < h; y++) {
+	  for (let x = 0; x < w; x++) {
+		let index = (y * w + x) * 4;
+		let flippedIndex = ((h - y - 1) * w + x) * 4;
+  
+		// Copy RGBA values
+		flippedPixels[flippedIndex] = img.pixels[index];     // Red
+		flippedPixels[flippedIndex + 1] = img.pixels[index + 1]; // Green
+		flippedPixels[flippedIndex + 2] = img.pixels[index + 2]; // Blue
+		flippedPixels[flippedIndex + 3] = img.pixels[index + 3]; // Alpha
+	  }
+	}
+  
+	// Assign the flipped pixels back to the image
+	img.pixels.set(flippedPixels);
+	img.updatePixels();
+}
+
 function setup() {
 	pixelDensity(PIXEL_DENSITY);
 	// canvas = createCanvas(1000,1000, WEBGL);
 	canvas = createCanvas(windowWidth, windowHeight, WEBGL);
+	
+	flipImage(textureBase);
 
 	background(0);
 	noStroke();
