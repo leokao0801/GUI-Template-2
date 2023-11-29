@@ -26,7 +26,7 @@ window.onload = function() {
 // from here
 function preload(){
 	theShader = loadShader('vert.glsl', 'frag.frag');
-	textureBase = loadImage("/data/MonaLisa.jpg");
+	textureBase = loadImage("data/MonaLisa.jpg");
 }
 // to here
 
